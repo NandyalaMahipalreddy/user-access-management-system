@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                             http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!-- Display name of the application -->
+    <display-name>User Access Management System</display-name>
+
+    <!-- Welcome file configuration: default page to load on accessing the root -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- SignUpServlet -->
+    <servlet>
+        <servlet-name>SignUpServlet</servlet-name>
+        <servlet-class>com.example.useraccessmanagement.controllers.SignUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUpServlet</servlet-name>
+        <url-pattern>/SignUpServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- LoginServlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.example.useraccessmanagement.controllers.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- RequestAccessServlet -->
+    <servlet>
+        <servlet-name>RequestAccessServlet</servlet-name>
+        <servlet-class>com.example.useraccessmanagement.controllers.RequestAccessServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestAccessServlet</servlet-name>
+        <url-pattern>/RequestAccessServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ManagerServlet: For handling manager approval/rejection of requests -->
+    <servlet>
+        <servlet-name>ManagerServlet</servlet-name>
+        <servlet-class>com.example.useraccessmanagement.controllers.ManagerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerServlet</servlet-name>
+        <url-pattern>/ManagerServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- AdminServlet: For handling admin functionalities like software creation -->
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.example.useraccessmanagement.controllers.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/AdminServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Error page for 404 errors -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.jsp</location>
+    </error-page>
+
+    <!-- Error page for 500 errors -->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error500.jsp</location>
+    </error-page>
+
+</web-app>
